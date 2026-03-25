@@ -334,11 +334,13 @@ export default function InterviewPage() {
       const tokenRes = await api.post('/interview/stt-token');
       const { token } = tokenRes.data;
       if (!token) throw new Error('Could not get transcription token from server');
-      const lang = selectedLangRef.current.slice(0, 2);
+      const lang = selectedLangRef.current.split('-')[0]; // 'en', 'hi', 'fr'
       const wsUrl = 'wss://api.deepgram.com/v1/listen' +
         '?encoding=linear16' +
         '&sample_rate=16000' +
         '&language=' + lang +
+        '&model=nova-2' +
+        '&smart_format=true' +
         '&interim_results=true';
       const ws = new WebSocket(wsUrl, ['token', token]);
       wsRef.current = ws;
