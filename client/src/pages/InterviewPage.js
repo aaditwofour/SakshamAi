@@ -116,13 +116,6 @@ export default function InterviewPage() {
     return () => clearInterval(timerRef.current);
   }, [phase]);
 
-  // Auto-submit after 30 minutes (1800 seconds)
-  useEffect(() => {
-    if (phase === 'interview' && timer >= 1800) {
-      addAlert('Time limit of 30 minutes reached. Auto-submitting.', 'error');
-      autoSubmit('30-minute time limit exceeded');
-    }
-  }, [timer, phase, autoSubmit]);
 
   const formatTime = s =>
     String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
@@ -199,6 +192,14 @@ export default function InterviewPage() {
       autoSubmitCalledRef.current = false;
     }
   }, [navigate, cleanupAudio]);
+
+  // Auto-submit after 30 minutes (1800 seconds)
+  useEffect(() => {
+    if (phase === 'interview' && timer >= 1800) {
+      addAlert('Time limit of 30 minutes reached. Auto-submitting.', 'error');
+      autoSubmit('30-minute time limit exceeded');
+    }
+  }, [timer, phase, autoSubmit]);
 
   const addAlert = (msg, type = 'warning') => {
     const id = Date.now();
