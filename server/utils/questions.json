@@ -1,0 +1,50 @@
+{
+  "software_engineer": [
+    { "id": "se1", "question": "Explain the difference between stack and heap memory.", "difficulty": "medium", "topic": "Memory Management" },
+    { "id": "se2", "question": "What is Object-Oriented Programming? Explain its four pillars.", "difficulty": "easy", "topic": "OOP" },
+    { "id": "se3", "question": "What is the difference between synchronous and asynchronous programming?", "difficulty": "medium", "topic": "Concurrency" },
+    { "id": "se4", "question": "Explain the concept of Big O notation with examples.", "difficulty": "medium", "topic": "Algorithms" },
+    { "id": "se5", "question": "What is a RESTful API? Explain its principles.", "difficulty": "easy", "topic": "API Design" },
+    { "id": "se6", "question": "Describe the SOLID principles in software engineering.", "difficulty": "hard", "topic": "Design Principles" },
+    { "id": "se7", "question": "What is the difference between SQL and NoSQL databases?", "difficulty": "easy", "topic": "Databases" },
+    { "id": "se8", "question": "Explain how garbage collection works in modern programming languages.", "difficulty": "hard", "topic": "Memory Management" },
+    { "id": "se9", "question": "What is microservices architecture and its advantages over monolithic?", "difficulty": "hard", "topic": "Architecture" },
+    { "id": "se10", "question": "How would you optimize a slow-performing database query?", "difficulty": "medium", "topic": "Optimization" }
+  ],
+  "sql_developer": [
+    { "id": "sq1", "question": "What is the difference between INNER JOIN, LEFT JOIN, and RIGHT JOIN?", "difficulty": "easy", "topic": "Joins" },
+    { "id": "sq2", "question": "Explain the concept of database normalization and its forms (1NF, 2NF, 3NF).", "difficulty": "medium", "topic": "Normalization" },
+    { "id": "sq3", "question": "What are indexes and how do they improve query performance?", "difficulty": "medium", "topic": "Indexing" },
+    { "id": "sq4", "question": "Explain the difference between HAVING and WHERE clause.", "difficulty": "easy", "topic": "Filtering" },
+    { "id": "sq5", "question": "What are stored procedures and when would you use them?", "difficulty": "medium", "topic": "Stored Procedures" },
+    { "id": "sq6", "question": "Explain ACID properties in database transactions.", "difficulty": "hard", "topic": "Transactions" },
+    { "id": "sq7", "question": "What is a subquery? Give an example of when to use one.", "difficulty": "medium", "topic": "Subqueries" },
+    { "id": "sq8", "question": "How would you find duplicate records in a table?", "difficulty": "easy", "topic": "Data Quality" },
+    { "id": "sq9", "question": "What are window functions? Explain ROW_NUMBER, RANK, and DENSE_RANK.", "difficulty": "hard", "topic": "Advanced SQL" },
+    { "id": "sq10", "question": "Explain the difference between clustered and non-clustered indexes.", "difficulty": "hard", "topic": "Indexing" }
+  ],
+  "full_stack_developer": [
+    { "id": "fs1", "question": "Explain the concept of CORS and how to handle it in a web application.", "difficulty": "medium", "topic": "Web Security" },
+    { "id": "fs2", "question": "What is the difference between React state and props?", "difficulty": "easy", "topic": "React" },
+    { "id": "fs3", "question": "Explain how JWT authentication works in a full-stack application.", "difficulty": "medium", "topic": "Authentication" },
+    { "id": "fs4", "question": "What is the Virtual DOM and how does React use it?", "difficulty": "medium", "topic": "React" },
+    { "id": "fs5", "question": "Describe the MVC architectural pattern.", "difficulty": "easy", "topic": "Architecture" },
+    { "id": "fs6", "question": "What are React Hooks? Explain useState and useEffect.", "difficulty": "easy", "topic": "React Hooks" },
+    { "id": "fs7", "question": "How does Node.js handle concurrent requests using the event loop?", "difficulty": "hard", "topic": "Node.js" },
+    { "id": "fs8", "question": "What is the difference between HTTP and WebSockets?", "difficulty": "medium", "topic": "Protocols" },
+    { "id": "fs9", "question": "Explain CI/CD and the importance of automated testing.", "difficulty": "hard", "topic": "DevOps" },
+    { "id": "fs10", "question": "What strategies would you use to improve the performance of a React application?", "difficulty": "hard", "topic": "Performance" }
+  ],
+  "data_analyst": [
+    { "id": "da1", "question": "What is the difference between supervised and unsupervised learning?", "difficulty": "easy", "topic": "Machine Learning" },
+    { "id": "da2", "question": "Explain the concept of data normalization vs standardization.", "difficulty": "medium", "topic": "Data Preprocessing" },
+    { "id": "da3", "question": "What is a confusion matrix and what metrics can be derived from it?", "difficulty": "medium", "topic": "Model Evaluation" },
+    { "id": "da4", "question": "Describe the steps in a typical data analysis pipeline.", "difficulty": "easy", "topic": "Data Pipeline" },
+    { "id": "da5", "question": "What is the difference between correlation and causation?", "difficulty": "easy", "topic": "Statistics" },
+    { "id": "da6", "question": "Explain what overfitting is and how to prevent it.", "difficulty": "medium", "topic": "Machine Learning" },
+    { "id": "da7", "question": "What are the different types of data visualizations and when to use each?", "difficulty": "easy", "topic": "Visualization" },
+    { "id": "da8", "question": "Explain Principal Component Analysis (PCA) and its use cases.", "difficulty": "hard", "topic": "Dimensionality Reduction" },
+    { "id": "da9", "question": "What is A/B testing and how do you determine statistical significance?", "difficulty": "hard", "topic": "Statistics" },
+    { "id": "da10", "question": "How would you handle missing data in a dataset?", "difficulty": "medium", "topic": "Data Cleaning" }
+  ]
+}
