@@ -583,7 +583,7 @@ export default function InterviewPage() {
           </div>
         )}
       </header>
-      <div style={{ position: 'fixed', top: '64px', right: '16px', zIndex: 200, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+      <div style={{ position: 'fixed', top: '64px', left: '16px', zIndex: 200, display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {alerts.map(a => (
           <div key={a.id} className={'alert alert-' + (a.type === 'error' ? 'error' : 'warning')} style={{ minWidth: '300px' }}>{a.msg}</div>
         ))}

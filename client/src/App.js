@@ -64,7 +64,7 @@ export default function App() {
       <BrowserRouter>
         <AppRoutes />
         <ToastContainer
-          position="top-right"
+          position="top-left"
           autoClose={3000}
           theme="dark"
           toastStyle={{ background: '#131929', border: '1px solid #1e2d4a', color: '#f0f4ff' }}
