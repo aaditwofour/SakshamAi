@@ -217,13 +217,16 @@ export default function InterviewPage() {
           violations: [...p.violations, { message: 'Tab switch', timestamp: new Date() }],
         };
         proctoringRef.current = n;
-        if (n.tabSwitches >= 3) autoSubmit('3 or more tab switches');
+        if (n.tabSwitches >= 3) {
+          autoSubmit('3 or more tab switches');
+        } else {
+          api.post('/interview/proctoring', {
+            interviewId: interviewIdRef.current, eventType: 'tab_switch', message: 'Tab switch'
+          }).catch(() => { });
+        }
         return n;
       });
       addAlert('Tab switch detected!', 'warning');
-      api.post('/interview/proctoring', {
-        interviewId: interviewIdRef.current, eventType: 'tab_switch', message: 'Tab switch'
-      }).catch(() => { });
     };
     document.addEventListener('visibilitychange', h);
     return () => document.removeEventListener('visibilitychange', h);
@@ -268,11 +271,6 @@ export default function InterviewPage() {
               const msg = 'Multiple faces detected (' + faces + ')';
               setProctoringMsg(msg);
               addAlert('Multiple faces detected. Auto-submitting.', 'error');
-              api.post('/interview/proctoring', {
-                interviewId: interviewIdRef.current,
-                eventType: 'multiple_faces',
-                message: msg
-              }).catch(() => { });
               clearInterval(faceDetectIntervalRef.current);
               autoSubmit(msg);
             } else {
