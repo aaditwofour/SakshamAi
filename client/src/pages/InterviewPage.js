@@ -17,22 +17,16 @@ const JOB_ROLES = [
 ];
 
 const LANGUAGES = [
-  { code: 'en-US', label: 'English', native: 'English' },
-  { code: 'hi-IN', label: 'Hindi', native: 'हिन्दी' },
-  { code: 'mr-IN', label: 'Marathi', native: 'मराठी' },
-  { code: 'ta-IN', label: 'Tamil', native: 'தமிழ்' },
-  { code: 'te-IN', label: 'Telugu', native: 'తెలుగు' },
-  { code: 'bn-IN', label: 'Bengali', native: 'বাংলা' },
-  { code: 'gu-IN', label: 'Gujarati', native: 'ગુજરાતી' },
-  { code: 'kn-IN', label: 'Kannada', native: 'ಕನ್ನಡ' },
-  { code: 'ml-IN', label: 'Malayalam', native: 'മലയാളം' },
-  { code: 'pa-IN', label: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
-  { code: 'ur-PK', label: 'Urdu', native: 'اردو' },
-  { code: 'fr-FR', label: 'French', native: 'Français' },
-  { code: 'de-DE', label: 'German', native: 'Deutsch' },
-  { code: 'es-ES', label: 'Spanish', native: 'Español' },
-  { code: 'zh-CN', label: 'Chinese', native: '中文' },
-  { code: 'ar-SA', label: 'Arabic', native: 'العربية' },
+  { code: 'en', label: 'English', native: 'English' },
+  { code: 'hi', label: 'Hindi', native: 'हिन्दी' },
+  { code: 'ta', label: 'Tamil', native: 'தமிழ்' },
+  { code: 'fr', label: 'French', native: 'Français' },
+  { code: 'de', label: 'German', native: 'Deutsch' },
+  { code: 'es', label: 'Spanish', native: 'Español' },
+  { code: 'pt', label: 'Portuguese', native: 'Português' },
+  { code: 'zh', label: 'Chinese', native: '中文' },
+  { code: 'ja', label: 'Japanese', native: '日本語' },
+  { code: 'ko', label: 'Korean', native: '한국어' },
 ];
 
 function speakText(text, langCode, onEnd) {
@@ -54,7 +48,7 @@ export default function InterviewPage() {
 
   const [phase, setPhase] = useState('setup');
   const [selectedRole, setSelectedRole] = useState('');
-  const [selectedLang, setSelectedLang] = useState('en-US');
+  const [selectedLang, setSelectedLang] = useState('en');
   const [questions, setQuestions] = useState([]);
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -334,12 +328,11 @@ export default function InterviewPage() {
       const tokenRes = await api.post('/interview/stt-token');
       const { token } = tokenRes.data;
       if (!token) throw new Error('Could not get transcription token from server');
-      const lang = selectedLangRef.current.split('-')[0]; // 'en', 'hi', 'fr'
+      const lang = selectedLangRef.current;
       const wsUrl = 'wss://api.deepgram.com/v1/listen' +
         '?encoding=linear16' +
         '&sample_rate=16000' +
         '&language=' + lang +
-        '&model=nova-2' +
         '&smart_format=true' +
         '&interim_results=true';
       const ws = new WebSocket(wsUrl, ['token', token]);
