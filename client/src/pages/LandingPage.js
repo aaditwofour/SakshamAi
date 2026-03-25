@@ -461,7 +461,6 @@ export default function LandingPage() {
   const navLinks = [
     { label: 'Features',     onClick: () => featuresRef.current?.scrollIntoView({ behavior: 'smooth' }) },
     { label: 'How it works', onClick: () => featuresRef.current?.scrollIntoView({ behavior: 'smooth' }) },
-    { label: 'Pricing',      onClick: () => {} },
   ];
 
   const scrollToFeatures = () => {
