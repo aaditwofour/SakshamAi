@@ -500,7 +500,6 @@ export default function LandingPage() {
         </div>
 
         <div style={{ display: 'flex', gap: '8px' }} className="desktop-auth">
-          <Link to="/login" style={{ padding: '7px 16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,.08)', color: 'rgba(255,255,255,.4)', textDecoration: 'none', fontSize: '0.8rem' }}>Login</Link>
           <Link to="/register" style={{ padding: '7px 16px', borderRadius: '8px', background: 'rgba(255,255,255,.06)', border: '1px solid rgba(255,255,255,.12)', color: 'rgba(255,255,255,.85)', textDecoration: 'none', fontSize: '0.8rem', fontWeight: 600 }}>Sign Up</Link>
         </div>
 
@@ -516,7 +515,6 @@ export default function LandingPage() {
             <button key={n.label} onClick={() => { n.onClick(); setMenuOpen(false); }} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,.5)', fontSize: '1rem', textAlign: 'left', padding: '4px 0' }}>{n.label}</button>
           ))}
           <div style={{ display: 'flex', gap: '10px', paddingTop: '8px', borderTop: '1px solid rgba(255,255,255,.05)' }}>
-            <Link to="/login" onClick={() => setMenuOpen(false)} style={{ flex: 1, padding: '10px', borderRadius: '8px', border: '1px solid rgba(255,255,255,.08)', color: 'rgba(255,255,255,.55)', textDecoration: 'none', fontSize: '0.875rem', textAlign: 'center' }}>Login</Link>
             <Link to="/register" onClick={() => setMenuOpen(false)} style={{ flex: 1, padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,.06)', border: '1px solid rgba(255,255,255,.12)', color: '#fff', textDecoration: 'none', fontSize: '0.875rem', textAlign: 'center', fontWeight: 600 }}>Sign Up</Link>
           </div>
         </div>
