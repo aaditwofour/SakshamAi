@@ -120,6 +120,16 @@ router.get('/history', protect, async (req, res) => {
     const interviews = await Interview.find({ student: req.user._id })
       .sort({ createdAt: -1 })
       .select('-answers.answer');
+
+    // Auto-mark as abandoned if left unsubmitted for 30+ minutes
+    const thirtyMinsAgo = new Date(Date.now() - 30 * 60 * 1000);
+    for (const inv of interviews) {
+      if (inv.status === 'in-progress' && inv.createdAt < thirtyMinsAgo) {
+        inv.status = 'abandoned';
+        await inv.save();
+      }
+    }
+
     res.json({ success: true, interviews });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
